@@ -16,9 +16,9 @@ planet_event = {
 #			has_event_chain = WORM_CHAIN_1
 #			NOT = { has_country_flag = alignment_built }
 		}
-#		from = {
-#			has_building = building_akx_worm_3
-#		}
+		from = {
+			has_building = building_basic_mine
+		}
 	}
 #
 #	immediate = {
