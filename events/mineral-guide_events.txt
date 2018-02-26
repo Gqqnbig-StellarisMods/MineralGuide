@@ -43,9 +43,6 @@ planet_event = {
 #	}
 
 	option = {
-		name = akx.10000.a
-	}
-	option = {
-		name = akx.10000.b
+		name = OK
 	}
 }
