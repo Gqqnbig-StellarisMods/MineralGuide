@@ -10,11 +10,25 @@ planet_event = {
 
 	is_triggered_only = yes
 
+# 如果一个地块造了基础矿井，并且其他只能造矿场的地块都造矿场了，
+# 就提示该造宇宙野矿厂了。
 	trigger = {
 		owner = {
 			is_ai = no
 #			has_event_chain = WORM_CHAIN_1
 #			NOT = { has_country_flag = alignment_built }
+			NOT = {
+				any_owned_planet = {
+					any_tile = {
+						AND = {
+							has_building = no
+							has_resource = { type = minerals amount > 0  }
+							has_resource = { type = food amount < 1   }
+							has_resource = { type = energy amount < 1  }
+						}
+					}
+				}
+			}
 		}
 		from = {
 			has_building = building_basic_mine
