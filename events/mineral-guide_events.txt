@@ -13,48 +13,31 @@ planet_event = {
 # 如果一个地块造了基础矿井，并且其他只能造矿场的地块都造矿场了，
 # 就提示该造宇宙野矿厂了。
 	trigger = {
+		from = {
+			OR = {
+				has_building = building_basic_mine
+				has_building = building_mining_network_1
+			}
+		}
 		owner = {
 			is_ai = no
-#			has_event_chain = WORM_CHAIN_1
-#			NOT = { has_country_flag = alignment_built }
 			NOT = {
 				any_owned_planet = {
-					any_tile = {
-						AND = {
-							has_building = no
-							has_resource = { type = minerals amount > 0  }
-							has_resource = { type = food amount < 1   }
-							has_resource = { type = energy amount < 1  }
+					AND = {
+						is_under_colonization = no
+						any_tile = {
+							AND = {
+								has_building = no
+								has_resource = { type = minerals amount > 0  }
+								has_resource = { type = food amount < 1   }
+								has_resource = { type = energy amount < 1  }
+							}
 						}
 					}
 				}
 			}
 		}
-		from = {
-			has_building = building_basic_mine
-		}
 	}
-#
-#	immediate = {
-#		owner = {
-#			set_country_flag = alignment_built
-#		}
-#	}
-
-#	after = {
-#		owner = {
-#			end_event_chain = WORM_CHAIN_1
-#			begin_event_chain = {
-#				event_chain = WORM_CHAIN_2
-#				target = this
-#			}
-#		}
-#		enable_special_project = {
-#			name = WORM_ENTRY_POINT
-#			location = this
-#			owner = root.owner
-#		}
-#	}
 
 	option = {
 		name = OK
