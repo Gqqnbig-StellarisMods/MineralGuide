@@ -3,7 +3,39 @@ namespace = mineralGuide
 planet_event = {
 	id = mineralGuide.1
 	title = mineralGuide.1.name
-	desc = mineralGuide.1.desc
+	desc = {
+		text = mineralGuide.1.desc
+		trigger = {
+			from = {
+			   has_building = "building_capital_3"
+			}
+		}
+	}
+
+	desc = {
+		text = mineralGuide.2.desc
+		trigger = {
+			owner = {
+				any_owned_planet = {
+					AND = {
+						OR = {
+							has_building = "building_capital_1"
+							has_building = "building_capital_2"
+							has_building = "building_capital_3"
+						}
+						any_tile = {
+							AND = {
+								has_building = no
+								hasOnlyMinerals = yes
+							}
+						}
+					}
+				}		
+			}
+		}
+	}
+
+
 	picture = GFX_evt_metropolis
 	show_sound = event_ship_bridge
 	location = root
@@ -21,19 +53,6 @@ planet_event = {
 		}
 		owner = {
 			is_ai = no
-			NOT = {
-				any_owned_planet = {
-					AND = {
-						is_under_colonization = no
-						any_tile = {
-							AND = {
-								has_building = no
-								hasOnlyMinerals = yes
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 
