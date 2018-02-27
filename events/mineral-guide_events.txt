@@ -28,9 +28,7 @@ planet_event = {
 						any_tile = {
 							AND = {
 								has_building = no
-								has_resource = { type = minerals amount > 0  }
-								has_resource = { type = food amount < 1   }
-								has_resource = { type = energy amount < 1  }
+								hasOnlyMinerals = yes
 							}
 						}
 					}
