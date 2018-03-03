@@ -6,9 +6,7 @@ planet_event = {
 	desc = {
 		text = mineralGuide.1.desc
 		trigger = {
-			from = {
-			   has_building = "building_capital_3"
-			}
+			always = no
 		}
 	}
 
@@ -18,11 +16,7 @@ planet_event = {
 			owner = {
 				any_owned_planet = {
 					AND = {
-						OR = {
-							has_building = "building_capital_1"
-							has_building = "building_capital_2"
-							has_building = "building_capital_3"
-						}
+						is_under_colonization = no
 						any_tile = {
 							AND = {
 								has_building = no
@@ -56,8 +50,128 @@ planet_event = {
 		}
 	}
 
+
+	immediate = {
+		owner = {
+			random_planet_within_border = {
+				limit = {
+					AND = {
+						has_deposit_for = shipclass_mining_station 
+						has_mining_station = no
+						orbital_deposit_tile = {
+							has_resource = { type = minerals amount > 2 }
+						}
+					}
+				}
+
+				save_event_target_as = "asteroid"
+			}
+
+			random_owned_planet = {
+				limit = {
+					AND = {
+						is_under_colonization = no
+						NOT = {
+							OR = {
+								has_building = "building_capital_1"
+								has_building = "building_capital_2"
+								has_building = "building_capital_3"
+							}
+						}
+						any_tile = {
+							AND = {
+								has_building = no
+								hasOnlyMinerals = yes
+							}
+						}
+					}
+				}
+
+				save_event_target_as = "planetWithEmptyTileForBasicMine"
+			}		
+
+			random_owned_planet = {
+				limit = {
+					AND = {
+						is_under_colonization = no
+						OR = {
+							has_building = "building_capital_1"
+							has_building = "building_capital_2"
+							has_building = "building_capital_3"
+						}
+						any_tile = {
+							AND = {
+								has_building = no
+								hasOnlyMinerals = yes
+							}
+						}
+					}
+				}
+
+				save_event_target_as = "planetWithEmptyTileForMiningNetwork"
+			}		
+
+		}
+	}
+
 	option = {
 		name = OK
+	}
+
+	option = {
+		name = mineralGuide.1.a
+
+		trigger = {
+			owner = {
+				any_owned_planet = {
+					AND = {
+						is_under_colonization = no
+						NOT = {
+							OR = {
+								has_building = "building_capital_1"
+								has_building = "building_capital_2"
+								has_building = "building_capital_3"
+							}
+						}
+						any_tile = {
+							AND = {
+								has_building = no
+								hasOnlyMinerals = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = mineralGuide.1.b
+
+		trigger = {
+			owner = {
+				any_owned_planet = {
+					AND = {
+						is_under_colonization = no
+						OR = {
+							has_building = "building_capital_1"
+							has_building = "building_capital_2"
+							has_building = "building_capital_3"
+						}
+						any_tile = {
+							AND = {
+								has_building = no
+								hasOnlyMinerals = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = mineralGuide.1.c
 	}
 }
 
