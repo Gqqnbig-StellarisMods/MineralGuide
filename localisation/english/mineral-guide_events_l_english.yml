@@ -4,7 +4,7 @@
  mineralGuide.1.desc:0 "你的地表矿场已造完。 请建造产出大于等于£minerals 2的宇宙野矿厂。 或者如果从$building_basic_mine$升级成$building_mining_network_1$成本是£minerals 30或以下， 而且你没有产出大于等于£minerals 3的野矿， 则请升级为$building_mining_network_1$。\n\n论证如下:\n$mineralGuide.100.desc$\n地块上$building_basic_mine$升级为$building_mining_network_1$花费60点矿物， 每月额外产出1点矿， 额外消耗0.5度电， 所以投资回报率为60矿/月矿，收益为2月矿/度电。\n\n当x>=1.5时，野矿较好。"
  mineralGuide.1.a:0 "[planetWithEmptyTileForBasicMine.GetName]有产£minerals地块可建造$building_basic_mine$"
  mineralGuide.1.b:0 "[planetWithEmptyTileForMiningNetwork.GetName]有产£minerals地块可建造或升级为$building_mining_network_1$"
- mineralGuide.1.c:0 "[asteroid.System.GetName]里的[asteroid.GetName]有尚未建造的产出为大于等于2的£minerals"
+ mineralGuide.1.c:0 "[asteroid.System.GetName]里的[asteroid.GetName]有尚未建造的产出为大于2的£minerals"
 
  mineralGuide.2.desc:0 "你还有殖民地可以直接新建矿场。 §!如果$building_mining_network_1$的成本 >£minerals 45， 3产野矿和$building_mining_network_1$可以同步进行。 如果$building_mining_network_1$的成本 <=£minerals 45， 4产野矿和$building_mining_network_1$可以同步进行。\n\n论证如下:\n$mineralGuide.100.desc$\n直接造$building_mining_network_1$的成本是60点矿物， 每月产出2点矿， 消耗1度电， 所以投资回报率为1月矿/30矿， 收益为2月矿/度电。当x>=3时，野矿较好。"
 
