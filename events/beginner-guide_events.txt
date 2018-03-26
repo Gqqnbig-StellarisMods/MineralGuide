@@ -1,0 +1,78 @@
+namespace = beginnerGuide
+
+country_event = {
+	id = beginnerGuide.1
+	title = beginnerGuide.1.name
+	desc = beginnerGuide.1.desc
+	picture = GFX_evt_metropolis
+	show_sound = event_ship_bridge
+
+	fire_only_once = yes
+	mean_time_to_happen = { months = 1 }
+
+
+	trigger = {
+		AND = {
+			num_pops > 55
+			num_pops < 60
+		}
+	}
+
+
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = beginnerGuide.2
+
+	mean_time_to_happen = { days = 15 }
+	hide_window = yes
+
+
+	trigger = {
+		any_owned_planet = {
+			is_colony = yes
+			free_pop_tiles = 0
+			OR = {
+				has_building = building_clinic
+				has_building = building_hospital
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				is_colony = yes
+				free_pop_tiles = 0
+				OR = {
+					has_building = building_clinic
+					has_building = building_hospital
+				}
+			}
+
+			planet_event = { id = beginnerGuide.3 }
+		}
+	}
+
+
+}
+
+planet_event = {
+	id = beginnerGuide.3
+	title = beginnerGuide.3.name
+	desc = beginnerGuide.3.desc
+	picture = GFX_evt_metropolis
+	show_sound = event_ship_bridge
+	location = ROOT
+
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		set_planet_flag = "helloworld"
+	}
+}

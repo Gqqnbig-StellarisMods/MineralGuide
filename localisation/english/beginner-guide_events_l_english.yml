@@ -1,0 +1,6 @@
+﻿l_english:
+
+ beginnerGuide.1.name:0 "$guardian.500.name$科学协助即将涨价"
+ beginnerGuide.1.desc:0 "人口大于等于61后科学协助的价格将变为  1000"
+ beginnerGuide.3.name:0 "满人口星球不需要增加人口增长率"
+ beginnerGuide.3.desc:0 "[ROOT.GetName]人口已满，请把$building_clinic$或$building_hospital$拆除"
