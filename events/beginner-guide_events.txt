@@ -27,11 +27,12 @@ country_event = {
 country_event = {
 	id = beginnerGuide.2
 
-	mean_time_to_happen = { days = 15 }
+	mean_time_to_happen = { days = 30 }
 	hide_window = yes
 
 
 	trigger = {
+		is_ai = no
 		any_owned_planet = {
 			is_colony = yes
 			free_pop_tiles = 0
