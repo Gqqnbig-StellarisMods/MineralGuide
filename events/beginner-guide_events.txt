@@ -27,7 +27,7 @@ country_event = {
 country_event = {
 	id = beginnerGuide.2
 
-	mean_time_to_happen = { days = 30 }
+	mean_time_to_happen = { days = 60 }
 	hide_window = yes
 
 
@@ -40,6 +40,8 @@ country_event = {
 				has_building = building_clinic
 				has_building = building_hospital
 			}
+			has_building_construction = no
+			NOT = {has_planet_flag = "DisableClinicCheck"}
 		}
 	}
 
@@ -52,6 +54,8 @@ country_event = {
 					has_building = building_clinic
 					has_building = building_hospital
 				}
+				has_building_construction = no
+				NOT = {has_planet_flag = "DisableClinicCheck"}
 			}
 
 			planet_event = { id = beginnerGuide.3 }
@@ -74,6 +78,9 @@ planet_event = {
 
 	option = {
 		name = OK
-		set_planet_flag = "helloworld"
+		set_timed_planet_flag = {
+			flag = "DisableClinicCheck"
+			days = 90
+		}
 	}
 }
