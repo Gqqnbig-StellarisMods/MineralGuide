@@ -5,4 +5,4 @@
  beginnerGuide.3.name:0 "满人口星球不需要增加人口增长率"
  beginnerGuide.3.desc:0 "[ROOT.GetName]人口已满，请把$building_clinic$或$building_hospital$拆除"
  beginnerGuide.5.name:0 "需要机器人"
- beginnerGuide.5.desc:0 "机器人挖矿效率高，请在空地上建造机器人。"
+ beginnerGuide.5.desc:0 "机器人挖矿效率高，请在[ROOT.GetName]的空地上建造机器人。"

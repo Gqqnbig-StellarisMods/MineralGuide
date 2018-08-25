@@ -88,7 +88,15 @@ planet_event = {
 country_event = {
 	id = beginnerGuide.4
 
-	mean_time_to_happen = { months = 1 }
+	mean_time_to_happen = { 
+		months = 1 
+		
+		modifier = {
+			factor = 100
+			NOT = { has_technology = "tech_robotic_workers" }
+		}
+
+	}
 	hide_window = yes
 
 	trigger = {
@@ -99,7 +107,7 @@ country_event = {
 			any_tile = {
 				OR = {
 					has_pop = no
-					is_robot_pop = no
+					pop = {	is_robot_pop = no }
 				}
 				OR = {
 					has_building = "building_basic_mine"
@@ -123,7 +131,7 @@ country_event = {
 				any_tile = {
 					OR = {
 						has_pop = no
-						is_robot_pop = no
+						pop = {	is_robot_pop = no }
 					}
 					OR = {
 						has_building = "building_basic_mine"
