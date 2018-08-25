@@ -84,3 +84,80 @@ planet_event = {
 		}
 	}
 }
+
+country_event = {
+	id = beginnerGuide.4
+
+	mean_time_to_happen = { months = 1 }
+	hide_window = yes
+
+	trigger = {
+		is_ai = no
+		has_technology = "tech_robotic_workers"
+		any_owned_planet = {
+			is_colony = yes
+			any_tile = {
+				OR = {
+					has_pop = no
+					is_robot_pop = no
+				}
+				OR = {
+					has_building = "building_basic_mine"
+					has_building = "building_mining_network_1"
+					has_building = "building_mining_network_2"
+					has_building = "building_mining_network_3"
+					has_building = "building_mining_network_4"
+					has_building = "building_mining_network_5"
+					has_building = "building_mineral_processing_plant_1"
+					has_building = "building_mineral_processing_plant_2"
+				}
+			}
+			free_pop_tiles > 0
+		}
+	}
+
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				is_colony = yes
+				any_tile = {
+					OR = {
+						has_pop = no
+						is_robot_pop = no
+					}
+					OR = {
+						has_building = "building_basic_mine"
+						has_building = "building_mining_network_1"
+						has_building = "building_mining_network_2"
+						has_building = "building_mining_network_3"
+						has_building = "building_mining_network_4"
+						has_building = "building_mining_network_5"
+						has_building = "building_mineral_processing_plant_1"
+						has_building = "building_mineral_processing_plant_2"
+					}
+				}
+				free_pop_tiles > 0
+			}
+
+			planet_event = { id = beginnerGuide.5 }
+		}
+	}
+
+
+}
+
+planet_event = {
+	id = beginnerGuide.5
+	title = beginnerGuide.5.name
+	desc = beginnerGuide.5.desc
+	picture = GFX_evt_metropolis
+	show_sound = event_ship_bridge
+	location = ROOT
+
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
