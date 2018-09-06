@@ -9,4 +9,7 @@
  mineralGuide.2.desc:0 "你还有殖民地可以直接新建矿场。 §!如果$building_mining_network_1$的成本 >£minerals 45， 3产野矿和$building_mining_network_1$可以同步进行。 如果$building_mining_network_1$的成本 <=£minerals 45， 4产野矿和$building_mining_network_1$可以同步进行。\n\n论证如下:\n$mineralGuide.100.desc$\n直接造$building_mining_network_1$的成本是60点矿物， 每月产出2点矿， 消耗1度电， 所以投资回报率为1月矿/30矿， 收益为2月矿/度电。当x>=3时，野矿较好。"
 
  mineralGuide.100.desc:0 "设宇宙野矿的月产出为x，则投资回报率为x月矿/90矿，收益为x月矿/度电。"
+ earlyGameGuide.3.name:0 "欢迎使用早期游戏指南"
+ earlyGameGuide.3.desc:0 "本模组指导前50年的游戏， 过了50年后不会弹出任何提示。 为了提升游戏引擎性能， 建议在游戏50年后禁用本模组。"
+ 
  
